@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+httpx
+jose
+python-jose
+email-validator
+fastapi-security

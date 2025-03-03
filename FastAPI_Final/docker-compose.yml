@@ -1,0 +1,14 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.1.2 # Use the latest version (check Docker Hub for updates)
+    ports:
+      - "8080:8080"
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    command: start-dev --import-realm # Start in development mode and import initial realm if needed
+    volumes:
+      - keycloak_data:/opt/keycloak/data # Persist data across restarts (optional, but recommended)
+
+volumes:
+  keycloak_data: # Define a named volume for Keycloak data persistence
